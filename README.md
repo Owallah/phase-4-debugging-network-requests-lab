@@ -62,12 +62,15 @@ developing your own process.
 
 - Add a new toy when the toy form is submitted
 
-  - How I debugged:
+  - How I debugged: I noticed that the create method in the toys controller was having an error: `Toys.create`. Why is this an error? Model names are not always plural. 
+  - So I changed it to `Toy.create` and this solved it.
 
 - Update the number of likes for a toy
 
-  - How I debugged:
+  - How I debugged: I noticed the update method was not rendering a json after updating the toy.
+  - I therefore added the line `render json: toy`
 
 - Donate a toy to Goodwill (and delete it from our database)
 
-  - How I debugged:
+  - How I debugged: I noticed there was no `destroy` resource in the routes file.
+  - I included it.
